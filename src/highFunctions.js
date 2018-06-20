@@ -1,8 +1,15 @@
 // 2. SUM all the values in the following structure
 
-const sumNestedArray = ( array ) => array.toString().split( "," )
-    .map( el => parseInt( el, 10 ) )
-    .reduce( ( accumulator, current ) => accumulator + current );
+// const sumNestedArray = ( array ) => array.toString().split( "," )
+//     .map( el => parseInt( el, 10 ) )
+//     .reduce( ( accumulator, current ) => accumulator + current );
+
+const FlattenArray = array => array.toString().split( "," );
+const MakeArrayNumeric = array => array.map( el => parseInt( el, 10 ) );
+const SumArray = array => array.reduce( ( accumulator, current ) => accumulator + current );
+
+const sumGivenNestedArray = ( operation1, operation2, operation3 ) => array => ( operation3( operation2( operation1( array ) ) ) );
+const sumNestedArray = ( sumGivenNestedArray( FlattenArray, MakeArrayNumeric, SumArray ) );
 
 // 1. SUM the numeric values from the following array using only map, reduce, filter
 
