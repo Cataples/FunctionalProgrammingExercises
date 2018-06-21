@@ -28,3 +28,12 @@ const composedReturnOddIds = ( operation1, operation2 ) => array => operation2( 
 const returnOddIds = composedReturnOddIds( returnId, returnOddId );
 
 export { returnOddIds };
+
+//  pipe with reduce
+
+// const func1 = a => a + 1;
+// const func2 = a => a * 2;
+
+// const pipe = (...funcs) => x => funcs.reduce( (value, f ) => f(value), x)
+
+// console.log(pipe(func1, func2)(5))
